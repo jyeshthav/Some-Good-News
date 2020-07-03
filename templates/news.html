@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block head %} 
+    <title>Flask-news-app</title>
+{% endblock %}
+
+{% block body %} 
+<div class="container">
+    {% if context %}
+        {% for n, d, i, c, r, u, p in context %}
+        <div class="row pt-3 pb-2">
+            <div class="col-4">
+                <img src="{{ i }}" alt="{{ d }}" class="img-fluid img-thumbnail">
+            </div>
+            <div class="col-8">
+                <h3>{{ n }}</h3> 
+                <p>{{ c }}
+                    <a href="{{ u }}" target="_blank">{{ r }}</a>
+                </p> 
+                <div class="row">
+                    <div class="col-6">
+                        <p>Published: {{ p }}</p>
+                    </div>
+                    <div class="col-6">
+                        <a href="{{ u }}" target="_blank">See article</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    {% else %}
+    <p>Nothing to show!</p>
+    {% endif %}
+</div>
+{% endblock %}
