@@ -6,29 +6,6 @@
 
 {% block body %} 
     <h1>Good news coming</h1>
-    <h3>Database fetch:</h3>
-    {% if context %}
-    <div class="container">
-        {% for ar in context %}
-        <div class="row pt-3 pb-2">
-            <div class="col-4">
-                <img src="{{ ar.img_url }}" alt="" class="img-fluid img-thumbnail">
-            </div>
-            <div class="col-8">
-                <h3>{{ ar.title }}</h3> 
-                <p>{{ ar.content }}
-                    <a href="{{ ar.url }}" target="_blank">read more</a>
-                </p> 
-                <div class="row">
-                    <div class="col-6">
-                        <p>Published: {{ ar.date_created }}</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        {% endfor %}
-    {% else %}
-    <p>Nothing</p>
-    {% endif %}
+    <p>Module in development</p>
 </div>
 {% endblock %}
